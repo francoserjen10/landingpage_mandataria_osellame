@@ -3,7 +3,10 @@
 export default function Hero() {
     return (
         <>
-            <section className="relative flex-1 flex flex-col items-center gap-10 px-6 justify-around">
+            <section
+                className="relative flex-1 flex flex-col items-center gap-10 px-6 justify-around"
+                style={{ marginTop: 'var(--header-height, 0px)' }}
+            >
                 <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
                 <div className="relative flex flex-col items-center text-center max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-4xl gap-4">
                     <h3>Primer texto del hero</h3>

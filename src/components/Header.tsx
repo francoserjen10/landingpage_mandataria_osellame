@@ -1,13 +1,16 @@
 "use client";
 
-import { MessageCircle, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import ButtonCTA from './ButtonCTA';
 import { NAV_ITEMS } from '@/constants/navigation';
 import { NavItem } from './NavItem';
+import { useHeaderHeight } from '@/hooks/useHeaderHeight';
 
 export function Header() {
+
+    const headerRef = useRef<HTMLElement | null>(null);
     const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
     const scrollToSection = (id: string) => {
@@ -18,8 +21,14 @@ export function Header() {
         }
     };
 
+    // Use del hook para ajustar la altura del header
+    useHeaderHeight(headerRef);
+
     return (
-        <header className="fixed top-0 w-full bg-slate-800/95 backdrop-blur-sm shadow-lg z-50">
+        <header
+            ref={headerRef}
+            className="fixed top-0 w-full bg-slate-800/95 backdrop-blur-sm shadow-lg z-50"
+        >
             <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12">
                 <div className="flex justify-between items-center py-4">
                     <div className="flex items-center gap-3">
