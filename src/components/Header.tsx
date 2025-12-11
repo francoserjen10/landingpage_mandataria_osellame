@@ -56,7 +56,7 @@ export function Header() {
 
                         <ButtonCTA
                             title="WhatsApp"
-                            style="bg-green-500 text-white px-6 py-2.5 rounded-lg hover:bg-green-600 transition-all hover:scale-105 flex items-center gap-2 shadow-lg"
+                            style="bg-green-600 text-white px-6 py-2.5 rounded-lg hover:bg-green-700 transition-all hover:scale-105 flex items-center gap-2 shadow-lg"
                         />
                     </nav>
 
@@ -89,7 +89,7 @@ export function Header() {
 
                             <ButtonCTA
                                 title="Contactar por WhatsApp"
-                                style="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center gap-2 mt-2"
+                                style="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2 mt-2"
                             />
                         </div>
                     </nav>
