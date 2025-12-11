@@ -7,18 +7,17 @@ import ButtonCTA from './ButtonCTA';
 import { NAV_ITEMS } from '@/constants/navigation';
 import { NavItem } from './NavItem';
 import { useHeaderHeight } from '@/hooks/useHeaderHeight';
+import { useScrollToSection } from '@/hooks/useScrollToSection';
 
 export function Header() {
 
     const headerRef = useRef<HTMLElement | null>(null);
     const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+    const { scrollToSection } = useScrollToSection();    
 
-    const scrollToSection = (id: string) => {
-        const element: HTMLElement | null = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-            setMobileMenuOpen(false);
-        }
+    const handleNavClick = (id: string) => {
+        scrollToSection(id);
+        setMobileMenuOpen(false);
     };
 
     // Use del hook para ajustar la altura del header
@@ -50,7 +49,7 @@ export function Header() {
                                 key={item.id}
                                 id={item.id}
                                 label={item.label}
-                                onClick={scrollToSection}
+                                onClick={handleNavClick}
                                 className="text-gray-200 hover:text-amber-400 transition-colors"
                             />
                         ))}
@@ -83,7 +82,7 @@ export function Header() {
                                     key={item.id}
                                     id={item.id}
                                     label={item.label}
-                                    onClick={scrollToSection}
+                                    onClick={handleNavClick}
                                     className="text-gray-200 hover:text-amber-400 transition-colors text-left py-2"
                                 />
                             ))}
