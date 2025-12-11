@@ -1,0 +1,101 @@
+"use client";
+
+import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
+import { useRef, useState } from 'react';
+import ButtonCTA from './ButtonCTA';
+import { NAV_ITEMS } from '@/constants/navigation';
+import { NavItem } from './NavItem';
+import { useHeaderHeight } from '@/hooks/useHeaderHeight';
+import { useScrollToSection } from '@/hooks/useScrollToSection';
+
+export function Header() {
+
+    const headerRef = useRef<HTMLElement | null>(null);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+    const { scrollToSection } = useScrollToSection();
+
+    const handleNavClick = (id: string) => {
+        scrollToSection(id);
+        setMobileMenuOpen(false);
+    };
+
+    // Use del hook para ajustar la altura del header
+    useHeaderHeight(headerRef);
+
+    return (
+        <header
+            ref={headerRef}
+            className="fixed top-0 w-full bg-slate-800/95 backdrop-blur-sm shadow-lg z-50"
+        >
+            <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12">
+                <div className="flex justify-between items-center py-4">
+                    <div className="flex items-center gap-3">
+                        <Image
+                            src="/images/logo.png"
+                            alt="Gestoría Digital"
+                            width={50}
+                            height={50}
+                        />
+                        <div className="flex flex-col">
+                            <span className="text-white text-lg leading-tight">Gestoría</span>
+                            <span className="text-amber-400 text-lg leading-tight">Digital</span>
+                        </div>
+                    </div>
+
+                    <nav className="hidden lg:flex items-center gap-8">
+                        {NAV_ITEMS.map((item) => (
+                            <NavItem
+                                key={item.id}
+                                id={item.id}
+                                label={item.label}
+                                onClick={handleNavClick}
+                                className="text-gray-200 hover:text-amber-400 transition-colors"
+                            />
+                        ))}
+
+                        <ButtonCTA
+                            title="WhatsApp"
+                            style="bg-green-700 text-white px-6 py-2.5 rounded-lg hover:bg-green-800 transition-all hover:scale-105 flex items-center gap-2 shadow-lg"
+                        />
+                    </nav>
+
+                    <div className="flex lg:hidden items-center gap-4">
+                        <ButtonCTA
+                            title=''
+                            style="text-green-600 hover:text-green-600"
+                        />
+                        <button
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        >
+                            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                        </button>
+                    </div>
+                </div>
+
+                {/* Mobile Menu */}
+                {mobileMenuOpen && (
+                    <nav className="lg:hidden py-4 border-t border-slate-700">
+                        <div className="flex flex-col gap-4">
+
+                            {NAV_ITEMS.map((item) => (
+                                <NavItem
+                                    key={item.id}
+                                    id={item.id}
+                                    label={item.label}
+                                    onClick={handleNavClick}
+                                    className="text-gray-200 hover:text-amber-400 transition-colors text-left py-2"
+                                />
+                            ))}
+
+                            <ButtonCTA
+                                title="Contactar por WhatsApp"
+                                style="bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800 transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg"
+                            />
+                        </div>
+                    </nav>
+                )}
+            </div>
+        </header >
+    );
+}
