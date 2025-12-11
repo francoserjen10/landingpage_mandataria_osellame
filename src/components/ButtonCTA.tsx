@@ -12,7 +12,7 @@ export default function ButtonCTA({ title, style }: IButtonCTAProps) {
             rel="noopener noreferrer"
             className={style ? style : ''}
         >
-            <MessageCircle className="w-4 h-4" />
+            <MessageCircle className="w-5 h-5" />
             {title ? title : ''}
         </a>
     );

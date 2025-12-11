@@ -1,25 +1,33 @@
 "use client";
 
-import { MessageCircle, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import ButtonCTA from './ButtonCTA';
 import { NAV_ITEMS } from '@/constants/navigation';
 import { NavItem } from './NavItem';
+import { useHeaderHeight } from '@/hooks/useHeaderHeight';
+import { useScrollToSection } from '@/hooks/useScrollToSection';
 
 export function Header() {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
-    const scrollToSection = (id: string) => {
-        const element: HTMLElement | null = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-            setMobileMenuOpen(false);
-        }
+    const headerRef = useRef<HTMLElement | null>(null);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+    const { scrollToSection } = useScrollToSection();    
+
+    const handleNavClick = (id: string) => {
+        scrollToSection(id);
+        setMobileMenuOpen(false);
     };
 
+    // Use del hook para ajustar la altura del header
+    useHeaderHeight(headerRef);
+
     return (
-        <header className="fixed top-0 w-full bg-slate-800/95 backdrop-blur-sm shadow-lg z-50">
+        <header
+            ref={headerRef}
+            className="fixed top-0 w-full bg-slate-800/95 backdrop-blur-sm shadow-lg z-50"
+        >
             <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12">
                 <div className="flex justify-between items-center py-4">
                     <div className="flex items-center gap-3">
@@ -41,7 +49,7 @@ export function Header() {
                                 key={item.id}
                                 id={item.id}
                                 label={item.label}
-                                onClick={scrollToSection}
+                                onClick={handleNavClick}
                                 className="text-gray-200 hover:text-amber-400 transition-colors"
                             />
                         ))}
@@ -74,7 +82,7 @@ export function Header() {
                                     key={item.id}
                                     id={item.id}
                                     label={item.label}
-                                    onClick={scrollToSection}
+                                    onClick={handleNavClick}
                                     className="text-gray-200 hover:text-amber-400 transition-colors text-left py-2"
                                 />
                             ))}
