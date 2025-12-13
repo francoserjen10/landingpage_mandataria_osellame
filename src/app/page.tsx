@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import Hero from "@/components/Hero";
+import { Services } from "@/components/services";
 // import styles from "./page.module.css";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
         <Header />
         <Hero />
       </div>
+      <Services />
     </>
   );
 }

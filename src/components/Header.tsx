@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import ButtonCTA from './ButtonCTA';
-import { NAV_ITEMS } from '@/constants/navigation';
+import { NAV_ITEMS } from '@/constants';
 import { NavItem } from './NavItem';
 import { useHeaderHeight } from '@/hooks/useHeaderHeight';
 import { useScrollToSection } from '@/hooks/useScrollToSection';
@@ -56,14 +56,14 @@ export function Header() {
 
                         <ButtonCTA
                             title="WhatsApp"
-                            style="bg-green-700 text-white px-6 py-2.5 rounded-lg hover:bg-green-800 transition-all hover:scale-105 flex items-center gap-2 shadow-lg"
+                            className="bg-green-700 text-white px-6 py-2.5 rounded-lg hover:bg-green-800 transition-all hover:scale-105 flex items-center gap-2 shadow-lg"
                         />
                     </nav>
 
                     <div className="flex lg:hidden items-center gap-4">
                         <ButtonCTA
                             title=''
-                            style="text-green-600 hover:text-green-600"
+                            className="text-green-600 hover:text-green-600"
                         />
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -90,7 +90,7 @@ export function Header() {
 
                             <ButtonCTA
                                 title="Contactar por WhatsApp"
-                                style="bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800 transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg"
+                                className="bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800 transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg"
                             />
                         </div>
                     </nav>

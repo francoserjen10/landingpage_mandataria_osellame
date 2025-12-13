@@ -10,7 +10,8 @@ export default function Hero() {
     return (
         <>
             <section
-                className="relative flex-1 flex flex-col items-center gap-10 px-6 justify-around pt-4 xl:pb-16"
+                id="home"
+                className="section-anchor relative flex-1 flex flex-col items-center gap-10 px-6 justify-around pt-4 xl:pb-16"
                 style={{ marginTop: 'var(--header-height, 0px)' }}
             >
                 <div className="absolute inset-0 bg-slate-900/85" aria-hidden="true" />
@@ -28,7 +29,7 @@ export default function Hero() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
                             <ButtonCTA
                                 title="Contactar Ahora"
-                                style="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all hover:scale-105 shadow-xl inline-flex items-center justify-center gap-2 text-lg font-semibold"
+                                className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all hover:scale-105 shadow-xl inline-flex items-center justify-center gap-2 text-lg font-semibold"
                             />
 
                             <button
