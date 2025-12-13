@@ -11,7 +11,7 @@ export default function Hero() {
         <>
             <section
                 id="home"
-                className="relative flex-1 flex flex-col items-center gap-10 px-6 justify-around pt-4 xl:pb-16"
+                className="section-anchor relative flex-1 flex flex-col items-center gap-10 px-6 justify-around pt-4 xl:pb-16"
                 style={{ marginTop: 'var(--header-height, 0px)' }}
             >
                 <div className="absolute inset-0 bg-slate-900/85" aria-hidden="true" />

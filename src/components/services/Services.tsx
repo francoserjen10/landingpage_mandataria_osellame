@@ -7,7 +7,7 @@ export function Services() {
         <section
             id="services"
             aria-labelledby="services-title"
-            className="py-24 bg-gradient-to-br from-slate-50 to-white"
+            className="section-anchor py-24 bg-gradient-to-br from-slate-50 to-white"
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <header className="text-center mb-20">

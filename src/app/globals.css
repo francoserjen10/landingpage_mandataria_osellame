@@ -15,10 +15,21 @@ body {
   margin: 0;
 }
 
-a, h1, h2, h3, button, p, span {
+a,
+h1,
+h2,
+h3,
+button,
+p,
+span {
   color: #fff;
   text-decoration: none;
 }
+
+.section-anchor {
+  scroll-margin-top: var(--header-height, 0px);
+}
+
 
 .bg-img-header-hero {
   background-image: url('/images/background-hero.jpg');
