@@ -1,9 +1,9 @@
 "use client";
-import { OWNER } from '@/constants/company';
+import { OWNER } from '@/constants';
 import { IButtonCTAProps } from '@/interfaces/buttonCTA.interface';
 import { MessageCircle } from 'lucide-react';
 
-export default function ButtonCTA({ title, style }: IButtonCTAProps) {
+export default function ButtonCTA({ title, className: style }: IButtonCTAProps) {
 
     return (
         <a
