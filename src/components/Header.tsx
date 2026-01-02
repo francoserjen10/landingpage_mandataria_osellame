@@ -32,14 +32,15 @@ export function Header() {
                 <div className="flex justify-between items-center py-4">
                     <div className="flex items-center gap-3">
                         <Image
-                            src="/images/logo.png"
+                            src="/images/Logo-gestoria.ico"
                             alt="Gestoría Digital"
                             width={50}
                             height={50}
+                            className="rounded-full"
                         />
                         <div className="flex flex-col">
                             <span className="text-white text-lg leading-tight">Gestoría</span>
-                            <span className="text-amber-400 text-lg leading-tight">Digital</span>
+                            <span className="text-amber-400 text-lg leading-tight">Osellame</span>
                         </div>
                     </div>
 
