@@ -16,7 +16,7 @@ export function Services() {
                         Soluciones Integrales para tus Trámites
                     </h2>
                     <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-                        Ofrezco servicios especializados en las áreas de automotor, judicial y créditos prendarios,
+                        Ofrezco servicios especializados en las áreas de <span className="text-black italic font-bold"> automotor, judicial previsional, administritivos y seguros</span>,
                         garantizando eficiencia y profesionalismo en cada gestión.
                     </p>
                 </header>
