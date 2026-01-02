@@ -21,7 +21,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  
+
   openGraph: {
     title: "Gestoría Digital — Automotor, Judicial y Previsional",
     description:
@@ -42,7 +42,9 @@ export const metadata = {
     card: "summary_large_image",
   },
   icons: {
-    icon: "/images/logo.png",
+    icon: '/images/Logo-gestoria.ico',
+    shortcut: '/images/Logo-gestoria.ico',
+    apple: '/images/Logo-gestoria.ico',
   },
 
 };
