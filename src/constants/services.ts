@@ -1,41 +1,80 @@
 import { IService } from "@/interfaces/services.interface";
-import { Car, FileText, Scale } from "lucide-react";
+import { Car, FileText, Landmark, Scale, ShieldCheck, UserCheck } from "lucide-react";
 
 export const SERVICES: IService[] = [
     {
         icon: Car,
         title: 'Trámites Automotor',
-        description: 'Transferencias de vehículos, altas, bajas, cambios de radicación, duplicados de cédulas y títulos.',
+        description: 'Gestión integral para Motos, Autos, Camionetas, Maquinas viales, Embarcaciones, Trailers',
         features: [
-            'Transferencias de vehículos',
-            'Inscripción inicial',
-            'Cambio de radicación',
-            'Duplicados de documentación',
-            'Verificación policial'
+            'Transferencias',
+            'Informes',
+            'Infracciones',
+            'Denuncia de venta',
+            'Denuncia de compra y posesión',
+            'Patentes',
+            'Altas y bajas',
+            'Verificacion',
+            'Cambio de motor',
+            'Arba',
+            'Municipalidades',
+            'Sellados',
+            'Ubicacion de titulares',
+            'Secuentros',
+            'Sucesiones',
+            'Duplicados',
+            'Extravios',
+            'Boletos de compra-venta',
+            'Formularios',
         ]
     },
     {
         icon: Scale,
         title: 'Gestiones Judiciales',
-        description: 'Asesoramiento y gestión en trámites judiciales relacionados con automotor y documentación legal.',
+        description: '',
         features: [
-            'Oficios judiciales',
-            'Inhibiciones',
-            'Levantamiento de medidas',
-            'Consultas de dominio',
-            'Trámites sucesorios'
+            'Sucesiones',
+            'Diligenciamientos',
+            'Oficios - Cedulas',
+            'Inscripciones',
+            'Pedidos de actas',
+            'Ubicacion y seguimiento de expedientes',
         ]
     },
     {
-        icon: FileText,
-        title: 'Créditos Prendarios',
-        description: 'Gestión completa de prendas vehiculares, desde la inscripción hasta la cancelación.',
+        icon: Landmark,
+        title: 'Administritivos',
+        description: '',
         features: [
-            'Inscripción de prendas',
-            'Cancelación de prendas',
-            'Consulta de gravámenes',
-            'Tramitación ante el Registro',
-            'Asesoramiento crediticio'
+            'Registros de la propiedad inmueble RPI',
+            'Pedidos de actas',
+            'ARBA',
+            'Consulados',
+            'ARCA'
+        ]
+    },
+    {
+        icon: UserCheck,
+        title: 'Previsional',
+        description: '',
+        features: [
+            'Jubilaciones',
+            'Pensiones',
+            'Reajustes',
+            'Reclamos',
+            'ANSES',
+            'I.P.S.'
+        ]
+    },
+    {
+        icon: ShieldCheck,
+        title: 'Seguros',
+        description: '',
+        features: [
+            "Asesoramiento personalizado",
+            "Búsqueda de la mejor opción disponible",
+            "Cotizaciones al instante",
+            "Orientación según cada necesidad",
         ]
     }
 ];
